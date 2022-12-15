@@ -116,12 +116,12 @@ class CalendarHeader extends Component {
           >
             {_headerText}
           </Text>
-          {this.props.todayComponent &&
-            this.props.selectedDate &&
+          {this.props?.todayComponent &&
+            this.props?.selectedDate &&
             !this.props.selectedDate.isSame(new Date(), 'day') &&
             React.cloneElement(this.props.todayComponent, {
               onPress: () => {
-                this.props.todayComponent.onPress &&
+                this.props.todayComponent?.onPress &&
                   this.props.todayComponent.onPress();
                 this.gotoToday();
               },
