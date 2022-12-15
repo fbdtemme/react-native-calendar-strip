@@ -1,7 +1,7 @@
 {
   "name": "react-native-calendar-strip",
-  "version": "0.1.0",
-  "description": "test",
+  "version": "2.2.6",
+  "description": "Easy to use and visually stunning calendar component for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -41,7 +41,16 @@
     "android"
   ],
   "repository": "https://github.com/fbdtemme/react-native-calendar-strip",
-  "author": "Bogdan Begovic <bogdanbegovic@gmail.com> <florian.detemmmerman@lizard.bio> (https://github.com/fbdtemme)",
+  "author": "Bogdan Begovic <bogdanbegovic@gmail.com>",
+  "contributors": [
+    "Christopher Burns (https://github.com/Burnsy)",
+    "Florian Biebel (https://github.com/1ne8ight7even)",
+    "Peace Chen (https://github.com/peacechen)",
+    "Sam Colby (https://github.com/samcolby)",
+    "Vitaliy Zhukov (https://github.com/Vitall)",
+    "Dimka Vasilyev (https://github.com/gHashTag)",
+    "Quinton Chester (https://github.com/QuintonC)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fbdtemme/react-native-calendar-strip/issues"
@@ -49,6 +58,12 @@
   "homepage": "https://github.com/fbdtemme/react-native-calendar-strip#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "moment": ">=2.0.0",
+    "node-git-hooks": "^1.0.1",
+    "prop-types": "^15.6.0",
+    "recyclerlistview": "^4.2.0"
   },
   "devDependencies": {
     "@evilmartians/lefthook": "^1.2.2",
@@ -89,6 +104,9 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
+  },
+  "directories": {
+    "example": "example"
   },
   "commitlint": {
     "extends": [
