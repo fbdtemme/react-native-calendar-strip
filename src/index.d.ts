@@ -1,13 +1,12 @@
-import { Component, ReactNode, ComponentProps, RefObject } from 'react';
+import { Component, ComponentProps, ReactNode, RefObject } from 'react';
 import { Duration, Moment } from 'moment';
 import {
-  StyleProp,
-  ViewStyle,
-  TextStyle,
   GestureResponderEvent,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
 } from 'react-native';
 import { RecyclerListView } from 'recyclerlistview';
-import PropTypes from 'prop-types';
 
 interface IDaySelectionAnimationBorder {
   type: 'border';
@@ -121,8 +120,7 @@ interface CalendarStripProps {
   calendarHeaderStyle?: StyleProp<TextStyle>;
   calendarHeaderFormat?: string;
   calendarHeaderPosition?: 'below' | 'above';
-  todayText: string | undefined;
-  todayStyle: StyleProp<TextStyle>;
+  todayComponent: React.ReactNode;
 
   calendarAnimation?: {
     duration: number;

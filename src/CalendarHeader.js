@@ -24,7 +24,7 @@ class CalendarHeader extends Component {
     onHeaderSelected: PropTypes.func,
     onDateSelected: PropTypes.func,
     selectedDate: PropTypes.object,
-    todayText: PropTypes.string,
+    todayComponent: PropTypes.object,
     todayStyle: PropTypes.object,
   };
 
@@ -116,20 +116,16 @@ class CalendarHeader extends Component {
           >
             {_headerText}
           </Text>
-          {this.props.todayText &&
+          {this.props.todayComponent &&
             this.props.selectedDate &&
-            !this.props.selectedDate.isSame(new Date(), 'day') && (
-              <TouchableOpacity
-                onPress={() => {
-                  this.gotoToday();
-                }}
-                style={{ paddingRight: 8 }}
-              >
-                <Text style={[styles.calendarHeader, todayStyle]}>
-                  {this.props.todayText}
-                </Text>
-              </TouchableOpacity>
-            )}
+            !this.props.selectedDate.isSame(new Date(), 'day') &&
+            React.cloneElement(this.props.todayComponent, {
+              onPress: () => {
+                this.props.todayComponent.onPress &&
+                  this.props.todayComponent.onPress();
+                this.gotoToday();
+              },
+            })}
         </View>
       </TouchableOpacity>
     );

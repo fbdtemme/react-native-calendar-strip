@@ -43,8 +43,7 @@ class CalendarStrip extends Component {
     datesBlacklist: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
 
     headerText: PropTypes.string,
-    todayText: PropTypes.string,
-    todayStyle: PropTypes.object,
+    todayComponent: PropTypes.object,
 
     markedDates: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
     scrollToOnSetSelectedDate: PropTypes.bool,
@@ -558,8 +557,7 @@ class CalendarStrip extends Component {
           fontSize={this.state.monthFontSize}
           allowHeaderTextScaling={this.props.shouldAllowFontScaling}
           headerText={this.props.headerText}
-          todayText={this.props.todayText}
-          todayStyle={this.props.todayStyle}
+          todayComponent={this.props.todayComponent}
           onDateSelected={this.props.onDateSelected}
           selectedDate={this.state.selectedDate}
         />
