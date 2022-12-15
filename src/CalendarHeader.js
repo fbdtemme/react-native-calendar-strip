@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Text, TouchableOpacity, View} from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 import styles from './Calendar.style.js';
-import moment from "moment";
+import moment from 'moment';
 
 class CalendarHeader extends Component {
   static propTypes = {
@@ -74,7 +74,7 @@ class CalendarHeader extends Component {
 
   // Function that goes to today's date
   gotoToday() {
-    const {onDateSelected} = this.props;
+    const { onDateSelected } = this.props;
     onDateSelected && onDateSelected(moment());
   }
 
@@ -100,16 +100,16 @@ class CalendarHeader extends Component {
       <TouchableOpacity
         onPress={
           onHeaderSelected &&
-          onHeaderSelected.bind(this, {weekStartDate, weekEndDate})
+          onHeaderSelected.bind(this, { weekStartDate, weekEndDate })
         }
         disabled={!onHeaderSelected}
         style={calendarHeaderContainerStyle}
       >
-        <View style={{flexGrow: 1, flexDirection: 'row'}}>
+        <View style={{ flexGrow: 1, flexDirection: 'row' }}>
           <Text
             style={[
               styles.calendarHeader,
-              {fontSize: fontSize, flexGrow: 1},
+              { fontSize: fontSize, flexGrow: 1 },
               calendarHeaderStyle,
             ]}
             allowFontScaling={allowHeaderTextScaling}
@@ -123,9 +123,11 @@ class CalendarHeader extends Component {
                 onPress={() => {
                   this.gotoToday();
                 }}
-                style={{paddingRight: 8}}
+                style={{ paddingRight: 8 }}
               >
-                <Text style={[styles.calendarHeader, todayStyle]}>{this.props.todayText}</Text>
+                <Text style={[styles.calendarHeader, todayStyle]}>
+                  {this.props.todayText}
+                </Text>
               </TouchableOpacity>
             )}
         </View>
