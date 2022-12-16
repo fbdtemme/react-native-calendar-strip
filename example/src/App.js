@@ -4,15 +4,17 @@
  */
 
 import React, { Component } from 'react';
-import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { Button, Text, TouchableOpacity, View } from 'react-native';
 import CalendarStrip from 'react-native-calendar-strip';
 import moment from 'moment';
 
-const todayComponent = (
-  <TouchableOpacity>
-    <Text>Test</Text>
-  </TouchableOpacity>
-);
+function TodayComponent() {
+  return (
+    <TouchableOpacity>
+      <Text>Test</Text>
+    </TouchableOpacity>
+  );
+}
 
 export default class App extends Component {
   constructor(props) {
@@ -122,7 +124,7 @@ export default class App extends Component {
           selectedDate={this.state.selectedDate}
           onDateSelected={this.onDateSelected}
           useIsoWeekday={false}
-          todayComponent={todayComponent}
+          todayComponent={<TodayComponent />}
         />
 
         <Text style={{ fontSize: 24 }}>

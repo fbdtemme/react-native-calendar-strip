@@ -2,9 +2,9 @@
  * Created by bogdanbegovic on 8/20/16.
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, Animated, PixelRatio } from 'react-native';
+import { Animated, PixelRatio, View } from 'react-native';
 
 import moment from 'moment';
 
@@ -18,7 +18,7 @@ import styles from './Calendar.style.js';
  * Class CalendarStrip that is representing the whole calendar strip and contains CalendarDay elements
  *
  */
-class CalendarStrip extends Component {
+class CalendarStrip extends PureComponent {
   static propTypes = {
     style: PropTypes.any,
     innerStyle: PropTypes.any,
@@ -186,24 +186,6 @@ class CalendarStrip extends Component {
     if (updateState) {
       this.setState({ ...startingDate, ...selectedDate, ...days });
     }
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    // Extract selector icons since JSON.stringify fails on React component circular refs
-    let _nextProps = Object.assign({}, nextProps);
-    let _props = Object.assign({}, this.props);
-
-    delete _nextProps.leftSelector;
-    delete _nextProps.rightSelector;
-    delete _props.leftSelector;
-    delete _props.rightSelector;
-
-    return (
-      JSON.stringify(this.state) !== JSON.stringify(nextState) ||
-      JSON.stringify(_props) !== JSON.stringify(_nextProps) ||
-      this.props.leftSelector !== nextProps.leftSelector ||
-      this.props.rightSelector !== nextProps.rightSelector
-    );
   }
 
   // Check whether two datetimes are of the same value.  Supports Moment date,

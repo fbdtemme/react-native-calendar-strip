@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import styles from './Calendar.style.js';
 import moment from 'moment';
 
-class CalendarHeader extends Component {
+class CalendarHeader extends PureComponent {
   static propTypes = {
     calendarHeaderFormat: PropTypes.string.isRequired,
     calendarHeaderContainerStyle: PropTypes.oneOfType([
@@ -27,10 +27,6 @@ class CalendarHeader extends Component {
     todayComponent: PropTypes.object,
     todayStyle: PropTypes.object,
   };
-
-  shouldComponentUpdate(nextProps) {
-    return JSON.stringify(this.props) !== JSON.stringify(nextProps);
-  }
 
   //Function that formats the calendar header
   //It also formats the month section if the week is in between months
