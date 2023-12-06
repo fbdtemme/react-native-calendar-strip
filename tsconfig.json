@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-calendar-strip": ["./src/index"]
+      "react-native-calendar-strip": ["./src/index"],
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -23,6 +23,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
+    "allowJs": true,
     "target": "esnext"
   }
 }
