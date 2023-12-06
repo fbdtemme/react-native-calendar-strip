@@ -91,14 +91,13 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "expo": ">=48.0.0",
     "react": "*",
-    "react-native": "*",
-    "expo": ">=48.0.0"
+    "react-native": "*"
   },
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -174,5 +173,6 @@
         }
       ]
     ]
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
